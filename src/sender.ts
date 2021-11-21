@@ -21,7 +21,7 @@ export class Sender<T> {
   }
   send(data: T, headers?: StringMap): Promise<RecordMetadata[]> {
     const msg: Message = {
-      value: JSON.parse(data as any),
+      value: (typeof data === 'string' ? data : JSON.stringify(data)),
       headers
     };
     return this.producer.send({
