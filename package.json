@@ -1,5 +1,5 @@
 {
-  "name": "kafka-ext",
+  "name": "kafka-extension",
   "version": "0.1.1",
   "description": "kafka",
   "main": "./lib/index.js",
