@@ -17,8 +17,10 @@ export function createKafkaChecker(conf: ClientConfig, service?: string, timeout
 }
 export class KafkaChecker {
   timeout: number;
-  constructor(public producer: Producer, public service?: string, timeout?: number) {
+  service: string;
+  constructor(public producer: Producer, service?: string, timeout?: number) {
     this.timeout = (timeout && timeout > 0 ? timeout : 4200);
+    this.service = (service && service.length > 0 ? service : 'kafka');
     this.check = this.check.bind(this);
     this.name = this.name.bind(this);
     this.build = this.build.bind(this);
@@ -35,9 +37,6 @@ export class KafkaChecker {
     }
   }
   name(): string {
-    if (!this.service) {
-      this.service = 'kafka';
-    }
     return this.service;
   }
   build(data: AnyMap, err: any): AnyMap {
