@@ -28,7 +28,7 @@ export class KafkaChecker {
   check(): Promise<AnyMap> {
     const obj = {} as AnyMap;
     const promise = new Promise<any>((resolve, reject) => {
-      return this.producer.connect().then(() => resolve(obj)).catch(err => reject(`Database down!`));
+      return this.producer.connect().then(() => resolve(obj)).catch(err => reject(`Kafka is down`));
     });
     if (this.timeout > 0) {
       return promiseTimeOut(this.timeout, promise);
