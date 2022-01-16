@@ -1,6 +1,6 @@
 {
-  "name": "kafka-extension",
-  "version": "0.1.5",
+  "name": "kafka-plus",
+  "version": "0.1.0",
   "description": "kafka",
   "main": "./lib/index.js",
   "types": "./src/index.ts",
