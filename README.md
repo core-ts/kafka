@@ -1,4 +1,6 @@
-# kafka
+# kafka-plus
+
+## Kafka
 Apache Kafka is an open-source stream processing platform developed by the Apache Software Foundation, designed for building real-time data pipelines and streaming applications. It is capable of handling high-throughput, low-latency data streams, making it ideal for use cases that require processing of large volumes of data in real-time.
 
 ### Libraries for Kafka
